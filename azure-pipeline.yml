@@ -27,5 +27,5 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
     scriptPath: 'create-document.sh'
-    arguments: '$(document) $(masterKey) $(cosmosDbInstanceName) $(dbName) $(containerName) $(partitionKeyName) $(partitionKeyValue)'
+    arguments: '''$(document)'' $(masterKey) $(cosmosDbInstanceName) $(dbName) $(containerName) $(partitionKeyName) $(partitionKeyValue)'
     
