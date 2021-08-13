@@ -12,6 +12,7 @@ variables:
   partitionKeyName: 'id'
   partitionKeyValue: '1'
 steps:
+- script:
 - task: AzureCLI@2
   displayName: Azure CLI
   inputs:
