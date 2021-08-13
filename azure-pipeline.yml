@@ -26,7 +26,7 @@ steps:
     azureSubscription: 'Demo Account'
     scriptType: bash
     scriptLocation: scriptPath 
-    scriptPath: 'createDocument.sh' 
+    scriptPath: 'create-document.sh' 
     arguments:
       -Arg1 $(document) `
       -Arg2 $(masterKey) `
