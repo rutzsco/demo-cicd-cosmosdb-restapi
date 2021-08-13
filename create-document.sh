@@ -17,6 +17,8 @@ dbName=$4
 containerName=$5
 partitionKeyName=$6
 partitionKeyValue=$7
+
+
 # If TRUE provided document can be created or updated automatically.
 # If FALSE and an existing "id" is provided, there will be an error.
 isUpsert=true
@@ -33,6 +35,9 @@ resourceType="docs"
 resourceLink="dbs/$dbName/colls/$containerName/docs"
 resourceId="dbs/$dbName/colls/$containerName"
 
+echo "documentJson: $documentJson"
+echo "comsosDbInstanceName: $comsosDbInstanceName"
+echo "resourceId: $resourceId"
 # URIs together with required parameter values can be found at: https://docs.microsoft.com/en-us/rest/api/cosmos-db/cosmosdb-resource-uri-syntax-for-rest
 
 # Get the CosmosDB's master key. We need this to get access.
