@@ -43,7 +43,6 @@ echo "resourceId: $resourceId"
 # Get the CosmosDB's master key. We need this to get access.
 # This is the same key that can be found on the portal in the "Keys" section of the CosmosDB instance. The primary key is what the REST API refers to as the "master" key.
 masterKey=$2
-echo "Masterkey: $masterKey"
 
 # CosmosDB REST API requires a hashed authorization header: https://docs.microsoft.com/de-de/rest/api/cosmos-db/access-control-on-cosmosdb-resources#authorization-header
 
