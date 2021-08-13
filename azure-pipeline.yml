@@ -18,7 +18,7 @@ steps:
     azureSubscription: 'Demo Account'
     scriptType: bash
     scriptLocation: scriptPath 
-    scriptPath: '$(Pipeline.Workspace)/createDocument.sh' 
+    scriptPath: 'createDocument.sh' 
     arguments:
       -Arg1 $(document) `
       -Arg2 $(masterKey) `
