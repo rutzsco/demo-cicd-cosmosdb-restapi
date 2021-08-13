@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  document: '{ "id": "1", "tempurature": "40" }'
+  document: '@document.json'
   cosmosDbInstanceName: 'rutzsco-demo-database'
   dbName: 'measurement-database'
   containerName: 'measurements'
@@ -27,5 +27,5 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
     scriptPath: 'create-document.sh'
-    arguments: '''$(document)'' $(masterKey) $(cosmosDbInstanceName) $(dbName) $(containerName) $(partitionKeyName) $(partitionKeyValue)'
+    arguments: '$(document) $(masterKey) $(cosmosDbInstanceName) $(dbName) $(containerName) $(partitionKeyName) $(partitionKeyValue)'
     
