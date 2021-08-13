@@ -24,15 +24,8 @@ steps:
   displayName: Azure CLI
   inputs:
     azureSubscription: 'Demo Account'
-    scriptType: bash
-    scriptLocation: scriptPath 
-    scriptPath: 'create-document.sh' 
-    arguments:
-      -Arg1 $(document) `
-      -Arg2 $(masterKey) `
-      -Arg3 $(cosmosDbInstanceName) `
-      -Arg4 $(dbName) `
-      -Arg5 $(containerName) `
-      -Arg6 $(partitionKeyName) `
-      -Arg7 $(partitionKeyValue)
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: 'create-document.sh'
+    arguments: '$(document) $(masterKey) $(cosmosDbInstanceName) $(dbName) $(containerName) $(partitionKeyName) $(partitionKeyValue)'
     
