@@ -1,0 +1,30 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  document: '{ "id": "1", "tempurature": "40" }'
+  cosmosDbInstanceName: 'rutzsco-demo-database'
+  dbName: 'measurement-database'
+  containerName: 'measurements'
+  partitionKeyName: 'id'
+  partitionKeyValue: '1'
+steps:
+- task: AzureCLI@2
+  displayName: Azure CLI
+  inputs:
+    azureSubscription: 'Internal Demo Account (164a84cf-b099-4567-a527-c2a8143a32c7)'
+    scriptType: bash
+    scriptLocation: scriptPath 
+    scriptPath: '$(Pipeline.Workspace)/createDocument.sh' 
+    arguments:
+      -Arg1 $(document) `
+      -Arg2 $(masterKey) `
+      -Arg3 $(cosmosDbInstanceName) `
+      -Arg4 $(dbName) `
+      -Arg5 $(containerName) `
+      -Arg6 $(partitionKeyName) `
+      -Arg7 $(partitionKeyValue)
+    
